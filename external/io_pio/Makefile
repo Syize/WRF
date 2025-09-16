@@ -13,7 +13,7 @@ FCBASEOPTS      = $(FCBASEOPTS_NO_G) $(FCDEBUG)
 FCFLAGS         = $(FCOPTIM) $(FCBASEOPTS)
 
 TRADFLAG        = -traditional
-CPP             = /lib/cpp -P
+CPP             = /usr/bin/cpp -P
 AR              = ar
 ARFLAGS         = ru
 M4              = m4

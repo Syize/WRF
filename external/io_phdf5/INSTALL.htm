@@ -519,7 +519,7 @@ The exact changes depend on how WRF has been configured on the sytsem.  <br>
 !                         -L../external/io_int -lwrfio_int  \<br>
 ! 			../frame/internal_header_util.o ../frame/pack_utils.o<br>
 ! LDFLAGS         =	-bmaxstack:256000000 -bmaxdata:0x80000000<br>
-! CPP		=	/lib/cpp<br>
+! CPP		=	/usr/bin/cpp<br>
 ! CPPFLAGS	=	-I$(LIBINCLUDE) -C -P $(ARCHFLAGS) -I../external/RSL/RSL `cat ../inc/dm_comm_cpp_flags`<br>
 ! MAX_DOMAINS     =       4<br>
 ! MAX_PROC        =       1024<br>
@@ -643,7 +643,7 @@ $(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_statu
 ! LIB             =       CONFIGURE_NETCDF_LIB_PATH \<br>
   			../frame/internal_header_util.o ../frame/pack_utils.o<br>
   LDFLAGS         =<br>
-  CPP             =       /lib/cpp<br>
+  CPP             =       /usr/bin/cpp<br>
 --- 1718,1731 ----<br>
   FCBASEOPTS      =       -byteswapio -Ktrap=fp -Mfree -tp p6 $(FCDEBUG)<br>
   FCFLAGS         =       $(FCOPTIM) $(FCBASEOPTS)<br>
@@ -658,7 +658,7 @@ $(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_statu
 ! LIB             =       CONFIGURE_NETCDF_LIB_PATH CONFIGURE_HDF5_LIB_PATH \<br>
   			../frame/internal_header_util.o ../frame/pack_utils.o<br>
   LDFLAGS         =<br>
-  CPP             =       /lib/cpp<br>
+  CPP             =       /usr/bin/cpp<br>
 ***************<br>
 *** 1666,1672 ****<br>
   M4              =       m4<br>
