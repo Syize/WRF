@@ -165,5 +165,5 @@ set_source_files_properties(
 
 install( 
         FILES       ${WRF_INCLUDE_FILES}
-        DESTINATION include/${FOLDER_COMPILE_TARGET}
+        DESTINATION include/wrf/${FOLDER_COMPILE_TARGET}
         )

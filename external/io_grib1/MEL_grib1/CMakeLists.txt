@@ -58,6 +58,6 @@ install(
         TARGETS ${FOLDER_COMPILE_TARGET}
         EXPORT  ${EXPORT_NAME}Targets
         RUNTIME DESTINATION bin/
-        ARCHIVE DESTINATION lib/
-        LIBRARY DESTINATION lib/
+        ARCHIVE DESTINATION lib/wrf/
+        LIBRARY DESTINATION lib/wrf/
         )

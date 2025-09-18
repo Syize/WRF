@@ -9,5 +9,5 @@ set(
 
 install( 
         FILES       ${WRF_INCLUDE_FILES}
-        DESTINATION include/inc/${FOLDER_COMPILE_TARGET}
+        DESTINATION include/wrf/${FOLDER_COMPILE_TARGET}
         )

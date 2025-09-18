@@ -19,7 +19,7 @@ target_sources(
 set_target_properties( 
                       ${FOLDER_COMPILE_TARGET} 
                         PROPERTIES
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${FOLDER_COMPILE_TARGET}
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${FOLDER_COMPILE_TARGET}
                           EXPORT_PROPERTIES        Fortran_MODULE_DIRECTORY
                           Fortran_FORMAT           FREE                          
                       )
@@ -68,7 +68,7 @@ set_target_properties(
                         ${DIFFWRF_TARGET}
                           PROPERTIES
                             # Just dump everything in here
-                            Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/modules/${DIFFWRF_TARGET}
+                            Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${DIFFWRF_TARGET}
                             Fortran_FORMAT           FREE
                         )
 
@@ -78,6 +78,6 @@ install(
         TARGETS ${FOLDER_COMPILE_TARGET} ${DIFFWRF_TARGET}
         EXPORT  ${EXPORT_NAME}Targets
         RUNTIME DESTINATION bin/
-        ARCHIVE DESTINATION lib/
-        LIBRARY DESTINATION lib/
+        ARCHIVE DESTINATION lib/wrf/
+        LIBRARY DESTINATION lib/wrf/
         )

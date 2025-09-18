@@ -71,7 +71,7 @@ foreach ( TARGET ${FOLDER_COMPILE_TARGETS} )
                         ${TARGET}
                           PROPERTIES
                             # Just dump everything in here
-                            Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/modules/${TARGET}/
+                            Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${TARGET}/
                             Fortran_FORMAT           FREE                          
                         )
 
@@ -125,20 +125,20 @@ endforeach()
 install(
         TARGETS ${FOLDER_COMPILE_TARGETS}
         RUNTIME DESTINATION bin/
-        ARCHIVE DESTINATION lib/
-        LIBRARY DESTINATION lib/
+        ARCHIVE DESTINATION lib/wrf/
+        LIBRARY DESTINATION lib/wrf/
         )
 
 # Install the "run" directory
 install(
         DIRECTORY   ${PROJECT_SOURCE_DIR}/run/
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/run
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run   # install to /usr/local/share/WRF/run
         PATTERN CMakeLists.txt EXCLUDE
         PATTERN .gitignore     EXCLUDE
         )
 wrf_setup_targets(
                   TARGETS         ${FOLDER_COMPILE_TARGETS}
-                  DEST_PATH       ${CMAKE_INSTALL_PREFIX}/run
+                  DEST_PATH       ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run
                   USE_SYMLINKS
                   )
 
@@ -147,13 +147,13 @@ wrf_setup_files(
                 FILES
                   ${PROJECT_SOURCE_DIR}/phys/noahmp/parameters/MPTABLE.TBL
                 DEST_PATH
-                  ${CMAKE_INSTALL_PREFIX}/run/
+                  ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run/
                 )
 
 if ( ${WRF_CORE} STREQUAL "PLUS" )
   wrf_setup_target_new_name(
                             TARGET         wrf
-                            DEST_PATH      ${CMAKE_INSTALL_PREFIX}/run
+                            DEST_PATH      ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run
                             NEW_NAME       wrfplus
                             USE_SYMLINKS
 

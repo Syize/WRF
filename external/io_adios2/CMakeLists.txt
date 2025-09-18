@@ -11,7 +11,7 @@ add_library(
 set_target_properties( 
                       ${FOLDER_COMPILE_TARGET} 
                         PROPERTIES
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${FOLDER_COMPILE_TARGET}
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${FOLDER_COMPILE_TARGET}
                           EXPORT_PROPERTIES        Fortran_MODULE_DIRECTORY
                       )
 
@@ -25,7 +25,7 @@ target_link_libraries(  ${FOLDER_COMPILE_TARGET}
 target_include_directories( ${FOLDER_COMPILE_TARGET}
                             PRIVATE
                               ${CMAKE_CURRENT_SOURCE_DIR}/../ioapi_share
-                              ${CMAKE_INSTALL_PREFIX}/${FOLDER_COMPILE_TARGET}
+                              ${CMAKE_INSTALL_PREFIX}/include/wrf/${FOLDER_COMPILE_TARGET}
                             )
 
 

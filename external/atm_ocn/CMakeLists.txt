@@ -20,7 +20,7 @@ target_sources(
 set_target_properties( 
                       ${FOLDER_COMPILE_TARGET} 
                         PROPERTIES
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${FOLDER_COMPILE_TARGET}
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${FOLDER_COMPILE_TARGET}
                           Fortran_FORMAT           FIXED
                           EXPORT_PROPERTIES        Fortran_MODULE_DIRECTORY
                       )

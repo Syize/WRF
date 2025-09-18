@@ -985,8 +985,9 @@ add_subdirectory( main     )
 ################################################################################
 if ( ${CURRENT_WRF_CORE_IDX} GREATER_EQUAL ${START_DA_IDX} )
   message( STATUS "DA or PLUS build, WRF_CASE selection ignored" )
-else()
-  add_subdirectory( test/${WRF_CASE_FOLDER} )
+# Remove test process.
+# else()
+#   add_subdirectory( test/${WRF_CASE_FOLDER} )
 endif()
 
 
@@ -1083,7 +1084,7 @@ set_target_properties(
                       ${PROJECT_NAME}_Core
                         PROPERTIES
                           # Just dump everything in here
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/modules/
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/
                           Fortran_FORMAT           FREE
                           EXPORT_PROPERTIES        Fortran_MODULE_DIRECTORY
                       )
@@ -1139,13 +1140,13 @@ target_link_libraries(  ${PROJECT_NAME}_Core
 ## Install and export
 ##
 ################################################################################
-set( CONFIG_INSTALL_DIRECTORY lib/cmake/${PROJECT_NAME} )
+set( CONFIG_INSTALL_DIRECTORY lib/cmake/wrf/${PROJECT_NAME} )
 install(
         TARGETS ${PROJECT_NAME}_Core
         EXPORT ${EXPORT_NAME}Targets
         RUNTIME DESTINATION bin/
-        ARCHIVE DESTINATION lib/
-        LIBRARY DESTINATION lib/
+        ARCHIVE DESTINATION lib/wrf/
+        LIBRARY DESTINATION lib/wrf/
         )
 
 # Install to namespace
@@ -1182,7 +1183,7 @@ install(
           # Trailing / is important
           ${PROJECT_SOURCE_DIR}/cmake/modules/
         COMPONENT       helpers
-        DESTINATION     share
+        DESTINATION     share/cmake/wrf/
         FILES_MATCHING
           PATTERN       "*.cmake"
         )
@@ -1193,5 +1194,5 @@ install(
           ${PROJECT_SOURCE_DIR}/cmake/printOption.cmake
           ${PROJECT_SOURCE_DIR}/cmake/wrf_get_version.cmake
         COMPONENT     helpers
-        DESTINATION   share
+        DESTINATION   share/cmake/wrf/
         )

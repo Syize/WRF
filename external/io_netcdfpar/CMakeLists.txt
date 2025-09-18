@@ -11,7 +11,7 @@ add_library(
 set_target_properties( 
                       ${FOLDER_COMPILE_TARGET} 
                         PROPERTIES
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${FOLDER_COMPILE_TARGET}
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${FOLDER_COMPILE_TARGET}
                           EXPORT_PROPERTIES        Fortran_MODULE_DIRECTORY
                       )
 
@@ -88,7 +88,7 @@ set_target_properties(
                       ${DIFFWRF_TARGET}
                         PROPERTIES
                           # Just dump everything in here
-                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/modules/${DIFFWRF_TARGET}
+                          Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/include/wrf/${DIFFWRF_TARGET}
                           Fortran_FORMAT           FREE
                       )
 
