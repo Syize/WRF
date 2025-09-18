@@ -139,7 +139,7 @@ install(
 wrf_setup_targets(
                   TARGETS         ${FOLDER_COMPILE_TARGETS}
                   DEST_PATH       ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run
-                  USE_SYMLINKS
+                  # USE_SYMLINKS
                   )
 
 # Re-setup this particular file
@@ -155,7 +155,7 @@ if ( ${WRF_CORE} STREQUAL "PLUS" )
                             TARGET         wrf
                             DEST_PATH      ${CMAKE_INSTALL_PREFIX}/share/wrf/WRF/run
                             NEW_NAME       wrfplus
-                            USE_SYMLINKS
+                            # USE_SYMLINKS
 
   )
 endif()

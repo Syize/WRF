@@ -38,7 +38,7 @@ macro( wrf_setup_targets )
     install( 
             CODE "
                   message( STATUS \"Creating symlink for $<TARGET_FILE_NAME:${WRF_SETUP_TARGET}>.exe\" )
-                  execute_process( COMMAND ${CMAKE_COMMAND} -E create_symlink ${WRF_SETUP_DEST_PATH}/$<TARGET_FILE_NAME:${WRF_SETUP_TARGET}> ${WRF_SETUP_DEST_PATH}/$<TARGET_FILE_NAME:${WRF_SETUP_TARGET}>.exe )
+                  execute_process( COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_NAME:${WRF_SETUP_TARGET}> ${WRF_SETUP_DEST_PATH}/$<TARGET_FILE_NAME:${WRF_SETUP_TARGET}>.exe )
                   "
             COMPONENT setup
             )
@@ -85,7 +85,7 @@ macro( wrf_setup_target_new_name )
   install( 
           CODE "
                 message( STATUS \"Creating symlink for ${WRF_SETUP_NEW_NAME}.exe\" )
-                execute_process( COMMAND ${CMAKE_COMMAND} -E create_symlink ${WRF_SETUP_DEST_PATH}/${WRF_SETUP_NEW_NAME} ${WRF_SETUP_DEST_PATH}/${WRF_SETUP_NEW_NAME}.exe )
+                execute_process( COMMAND ${CMAKE_COMMAND} -E create_symlink ${WRF_SETUP_NEW_NAME} ${WRF_SETUP_DEST_PATH}/${WRF_SETUP_NEW_NAME}.exe )
                 "
           COMPONENT setup
           )
